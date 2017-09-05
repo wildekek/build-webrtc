@@ -22,6 +22,8 @@ var DEFAULT_WEBRTC_REF = DEFAULTS.webrtc.ref;
 var DEFAULT_WEBRTC_REPO = DEFAULTS.webrtc.repo;
 
 // Configuration
+var HOST_ARCH = os.arch();
+var HOST_PLATFORM = process.platform;
 var ARCH = process.env.TARGET_ARCH || DEFAULT_ARCH;
 var PLATFORM = process.env.TARGET_PLATFORM || DEFAULT_PLATFORM;
 
@@ -53,6 +55,8 @@ var WEBRTC_OUT = computeWebRTCOut(WEBRTC_CHECKOUT_SRC, CONFIGURATION);
 var WEBRTC_REF = process.env.WEBRTC_REF || DEFAULT_WEBRTC_REF;
 var WEBRTC_REPO = process.env.WEBRTC_REPO || DEFAULT_WEBRTC_REPO;
 
+var DEPENDECY_INSTALLER_LINUX = path.join(WEBRTC_CHECKOUT_SRC, 'build/install-build-deps.sh');
+
 /**
  * Compute the WebRTC out directory (on Windows, this is actually suffixed with
  * the architecture).
@@ -81,6 +85,8 @@ function resolve(filepath) {
     : path.resolve(filepath);
 }
 
+exports.HOST_PLATFORM = HOST_PLATFORM;
+exports.HOST_ARCH = HOST_ARCH;
 exports.ARCH = ARCH;
 exports.AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY_ID;
 exports.AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS_KEY;
@@ -104,3 +110,4 @@ exports.WEBRTC_CHECKOUT_SRC = WEBRTC_CHECKOUT_SRC;
 exports.WEBRTC_OUT = WEBRTC_OUT;
 exports.WEBRTC_REF = WEBRTC_REF;
 exports.WEBRTC_REPO = WEBRTC_REPO;
+exports.DEPENDECY_INSTALLER_LINUX = DEPENDECY_INSTALLER_LINUX;
