@@ -11,8 +11,6 @@ var OUT_LIB = config.OUT_LIB;
 
 var WEBRTC_LIB = path.join(WEBRTC_OUT, 'obj', 'webrtc');
 
-console.log(WEBRTC_LIB);
-
 desc('Copy libraries');
 task('copy-webrtc-libraries', function() {
   log('Copying libraries to ' + OUT_LIB);
