@@ -5,7 +5,7 @@ var os = require('os');
 var path = require('path');
 
 // Default Configuration
-var DEFAULTS = fs.existsSync('../config.json')
+var DEFAULTS = fs.existsSync(__dirname + '/../config.json')
   ? require('../config')
   : require('../config.default');
 
@@ -22,6 +22,8 @@ var DEFAULT_WEBRTC_REF = DEFAULTS.webrtc.ref;
 var DEFAULT_WEBRTC_REPO = DEFAULTS.webrtc.repo;
 
 // Configuration
+var HOST_ARCH = os.arch();
+var HOST_PLATFORM = process.platform;
 var ARCH = process.env.TARGET_ARCH || DEFAULT_ARCH;
 var PLATFORM = process.env.TARGET_PLATFORM || DEFAULT_PLATFORM;
 
@@ -34,6 +36,7 @@ var DEPOT_TOOLS_CHECKOUT = resolve(process.env.DEPOT_TOOLS_CHECKOUT || DEFAULT_D
 var DEPOT_TOOLS_REPO = process.env.DEPOT_TOOLS_REPO || DEFAULT_DEPOT_TOOLS_REPO;
 var GCLIENT = path.join(DEPOT_TOOLS_CHECKOUT, 'gclient');
 var NINJA = path.join(DEPOT_TOOLS_CHECKOUT, 'ninja');
+var GN = path.join(DEPOT_TOOLS_CHECKOUT, 'gn');
 var PYTHON = PLATFORM === 'win32' ? path.join(DEPOT_TOOLS_CHECKOUT, 'python.bat') : 'python';
 
 var OUT = resolve(process.env.OUT || DEFAULT_OUT);
@@ -51,6 +54,8 @@ var WEBRTC_OUT = computeWebRTCOut(WEBRTC_CHECKOUT_SRC, CONFIGURATION);
 
 var WEBRTC_REF = process.env.WEBRTC_REF || DEFAULT_WEBRTC_REF;
 var WEBRTC_REPO = process.env.WEBRTC_REPO || DEFAULT_WEBRTC_REPO;
+
+var DEPENDECY_INSTALLER_LINUX = path.join(WEBRTC_CHECKOUT_SRC, 'build/install-build-deps.sh');
 
 /**
  * Compute the WebRTC out directory (on Windows, this is actually suffixed with
@@ -80,6 +85,8 @@ function resolve(filepath) {
     : path.resolve(filepath);
 }
 
+exports.HOST_PLATFORM = HOST_PLATFORM;
+exports.HOST_ARCH = HOST_ARCH;
 exports.ARCH = ARCH;
 exports.AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY_ID;
 exports.AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS_KEY;
@@ -87,6 +94,7 @@ exports.CONFIGURATION = CONFIGURATION;
 exports.DEPOT_TOOLS_CHECKOUT = DEPOT_TOOLS_CHECKOUT;
 exports.DEPOT_TOOLS_REPO = DEPOT_TOOLS_REPO;
 exports.GCLIENT = GCLIENT;
+exports.GN = GN;
 exports.NINJA = NINJA;
 exports.OUT = OUT;
 exports.OUT_COMMIT = OUT_COMMIT;
@@ -102,3 +110,4 @@ exports.WEBRTC_CHECKOUT_SRC = WEBRTC_CHECKOUT_SRC;
 exports.WEBRTC_OUT = WEBRTC_OUT;
 exports.WEBRTC_REF = WEBRTC_REF;
 exports.WEBRTC_REPO = WEBRTC_REPO;
+exports.DEPENDECY_INSTALLER_LINUX = DEPENDECY_INSTALLER_LINUX;
