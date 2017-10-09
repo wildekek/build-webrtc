@@ -9,7 +9,7 @@ var DEFAULTS = fs.existsSync(path.join(__dirname, '/../config.json'))
   ? require('../config')
   : require('../config.default');
 
-var DEFAULT_ARCH = DEFAULTS.arch || os.arch();
+var DEFAULT_ARCH = DEFAULTS.build_arguments.target_cpu || os.arch();
 var DEFAULT_BUILD_ARGUMENTS = DEFAULTS.build_arguments;
 var DEFAULT_CONFIGURATION = DEFAULTS.configuration;
 var DEFAULT_DEPOT_TOOLS_CHECKOUT = DEFAULTS.depot_tools.checkout;
