@@ -70,6 +70,25 @@ short-circuit the initial `gclient sync`.
 `WEBRTC_REF` or the config.json variable `webrtc.ref` to your desired git
 ref.
 
+### get-build-arguments
+
+```
+npm run get-build-arguments
+   jake get-build-arguments
+```
+
+This command shows all build arguments that can be used to configure your webrtc build.
+
+### set-build-arguments
+
+```
+npm run set-build-arguments
+   jake set-build-arguments
+```
+
+This command creates a build output directory with all GN build parameters from the config file.
+
+
 ### copy-webrtc
 
 ```
