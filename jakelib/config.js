@@ -52,7 +52,7 @@ var S3_REMOTE_PATH = process.env.S3_REMOTE_PATH || DEFAULT_S3_REMOTE_PATH;
 var WEBRTC_CHECKOUT = resolve(process.env.WEBRTC_CHECKOUT || DEFAULT_WEBRTC_CHECKOUT);
 var WEBRTC_CHECKOUT_GCLIENT = path.join(WEBRTC_CHECKOUT, '.gclient');
 var WEBRTC_CHECKOUT_SRC = path.join(WEBRTC_CHECKOUT, 'src');
-var WEBRTC_OUT = computeWebRTCOut(WEBRTC_CHECKOUT_SRC, CONFIGURATION);
+var WEBRTC_OUT = computeWebRTCOut(WEBRTC_CHECKOUT_SRC, CONFIGURATION, PLATFORM, ARCH);
 
 var WEBRTC_REF = process.env.WEBRTC_REF || DEFAULT_WEBRTC_REF;
 var WEBRTC_REPO = process.env.WEBRTC_REPO || DEFAULT_WEBRTC_REPO;
@@ -66,11 +66,10 @@ var DEPENDECY_INSTALLER_LINUX = path.join(WEBRTC_CHECKOUT_SRC, 'build/install-bu
  * @param {string} configuration - one of "Release" or "Debug"
  * @returns {string} - the WebRTC out directory
  */
-function computeWebRTCOut(src, configuration) {
+function computeWebRTCOut(src, configuration, platform, arch) {
   var out = path.join(src, 'out', configuration);
-  if (PLATFORM === 'win32' && ARCH === 'x64') {
-    out += '_x64';
-  }
+  out += '_'+platform;
+  out += '_'+arch;
   return out;
 }
 
