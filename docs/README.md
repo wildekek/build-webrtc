@@ -77,7 +77,7 @@ npm run copy-webrtc
    jake copy-webrtc
 ```
 
-This command runs both build-webrtc and copy-webrtc-headers.
+This command runs both build-webrtc, copy-webrtc-headers and copy-webrtc-libraries.
 
 **Want to copy to a different directory?** Set the environment variable `OUT` to
 the desired directory.
@@ -94,6 +94,19 @@ include directory.
 
 **Want to copy to a different directory?** Set the environment variable `OUT` to
 the desired directory.
+
+### copy-webrtc-libraries
+
+```
+npm run copy-webrtc-libraries
+   jake copy-webrtc-libraries
+```
+
+This command will copy WebRTC libraries from your WebRTC checkout into the lib directory
+
+**Want to copy to a different directory?** Set the environment variable `OUT` to
+the desired directory.
+
 
 ### lint
 
