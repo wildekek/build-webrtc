@@ -2,8 +2,8 @@
 'use strict';
 
 var execFileSync = require('child_process').execFileSync;
-var config = require('./config')
-var log = require('./log');;
+var config = require('./config');
+var log = require('./log');
 
 var WEBRTC_CHECKOUT_SRC = config.WEBRTC_CHECKOUT_SRC;
 var WEBRTC_OUT = config.WEBRTC_OUT;
