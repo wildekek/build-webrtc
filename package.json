@@ -12,6 +12,7 @@
   "scripts": {
     "build-webrtc": "jake build-webrtc",
     "get-build-arguments": "jake get-build-arguments",
+    "set-build-arguments": "jake set-build-arguments",
     "checkout-depot_tools": "jake checkout-depot_tools",
     "checkout-webrtc": "jake checkout-webrtc",
     "install-dependencies": "jake install-dependencies",

@@ -10,6 +10,7 @@ var DEFAULTS = fs.existsSync(__dirname + '/../config.json')
   : require('../config.default');
 
 var DEFAULT_ARCH = DEFAULTS.arch || os.arch();
+var DEFAULT_BUILD_ARGUMENTS = DEFAULTS.build_arguments;
 var DEFAULT_CONFIGURATION = DEFAULTS.configuration;
 var DEFAULT_DEPOT_TOOLS_CHECKOUT = DEFAULTS.depot_tools.checkout;
 var DEFAULT_DEPOT_TOOLS_REPO = DEFAULTS.depot_tools.repo;
@@ -26,6 +27,7 @@ var HOST_ARCH = os.arch();
 var HOST_PLATFORM = process.platform;
 var ARCH = process.env.TARGET_ARCH || DEFAULT_ARCH;
 var PLATFORM = process.env.TARGET_PLATFORM || DEFAULT_PLATFORM;
+var BUILD_ARGUMENTS = DEFAULT_BUILD_ARGUMENTS;
 
 var AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
 var AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
@@ -88,6 +90,7 @@ function resolve(filepath) {
 exports.HOST_PLATFORM = HOST_PLATFORM;
 exports.HOST_ARCH = HOST_ARCH;
 exports.ARCH = ARCH;
+exports.BUILD_ARGUMENTS = BUILD_ARGUMENTS;
 exports.AWS_ACCESS_KEY_ID = AWS_ACCESS_KEY_ID;
 exports.AWS_SECRET_ACCESS_KEY = AWS_SECRET_ACCESS_KEY;
 exports.CONFIGURATION = CONFIGURATION;
