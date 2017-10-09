@@ -19,7 +19,6 @@
     "copy-webrtc": "jake copy-webrtc",
     "copy-webrtc-headers": "jake copy-webrtc-headers",
     "copy-webrtc-libraries": "jake copy-webrtc-libraries",
-    "install": "jake",
     "lint": "eslint jakelib jakelib/*.jake Jakefile",
     "package-webrtc": "jake package-webrtc",
     "publish-webrtc": "jake publish-webrtc",
