@@ -1,7 +1,7 @@
 {
   "configuration": "Release",
   "build_arguments": {
-    "enable_iterator_debugging": false,
+    "is_debug": false,
   },
   "depot_tools": {
     "checkout": "depot_tools",
