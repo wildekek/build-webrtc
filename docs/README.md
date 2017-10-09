@@ -40,6 +40,14 @@ This command will build WebRTC.
 a normal build of WebRTC can be set before running this command; for example,
 `GYP_DEFINES`, `GYP_MSVS_VERSION`, etc.
 
+### install-dependencies
+
+```
+npm run install-dependencies
+   jake install-dependencies
+```
+Installs the dependencies to build webrtc. Currently only support linux.
+
 ### checkout-depot_tools
 
 ```
