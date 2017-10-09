@@ -12,9 +12,10 @@ var BUILD_ARGUMENTS = config.BUILD_ARGUMENTS;
 var gnArguments = Object.keys(BUILD_ARGUMENTS)
 .map(function(key) {
   let value = BUILD_ARGUMENTS[key];
-  if (typeof value === 'string')
-    value = '"'+ value + '"'
-  return key + '='+ value;
+  if (typeof value === 'string') {
+    value = '"' + value + '"';
+  }
+  return key + '=' + value;
 })
 .join(' ');
 

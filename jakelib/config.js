@@ -5,7 +5,7 @@ var os = require('os');
 var path = require('path');
 
 // Default Configuration
-var DEFAULTS = fs.existsSync(__dirname + '/../config.json')
+var DEFAULTS = fs.existsSync(path.join(__dirname, '/../config.json'))
   ? require('../config')
   : require('../config.default');
 

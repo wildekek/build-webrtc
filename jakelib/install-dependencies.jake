@@ -1,4 +1,4 @@
-/* global directory:false, task:false */
+/* global task:false, desc:false */
 'use strict';
 
 var config = require('./config');
@@ -10,7 +10,7 @@ var DEPENDECY_INSTALLER_LINUX = config.DEPENDECY_INSTALLER_LINUX;
 
 desc('Installing dependencies');
 task('install-dependencies', ['checkout-webrtc'], function() {
-  if(HOST_PLATFORM === 'linux') {
+  if (HOST_PLATFORM === 'linux') {
     log('Installing dependencies');
     execSync([
       DEPENDECY_INSTALLER_LINUX,
@@ -19,6 +19,6 @@ task('install-dependencies', ['checkout-webrtc'], function() {
       stdio: 'inherit'
     });
   } else {
-    log('Skipping dependency installer, '+ HOST_PLATFORM + ' not supported');
+    log('Skipping dependency installer, ' + HOST_PLATFORM + ' not supported');
   }
 });
