@@ -2,6 +2,7 @@
   "configuration": "Release",
   "build_arguments": {
     "is_debug": false,
+    "enable_iterator_debugging": false
   },
   "depot_tools": {
     "checkout": "depot_tools",
@@ -14,7 +15,7 @@
   },
   "out": ".",
   "s3": {
-    "bucket": "webrtc-libraries-and-headers",
+    "bucket": "dadong.webrtc-libraries-and-headers",
     "remote_path": "v1/build"
   }
 }
