@@ -14,6 +14,10 @@ better understand this tool. If so, read on!
 can build WebRTC normally by following [WebRTC's own build instructions](https://webrtc.org/native-code/development/)
 before opening an issue.
 
+Configuration
+-------------
+Build-webrtc can be configured with a simple json file. By default it will use config.default.json file in the root. If you want to customize your build or cross compile, copy the default file or one of the examples from the 'config-examples' folder to config.json in the root. If we find a config.json file in the root, it wil take precedence of the config.default.json.
+
 Commands
 --------
 
