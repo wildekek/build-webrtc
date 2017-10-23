@@ -1,0 +1,25 @@
+{
+  "configuration": "Release",
+  "build_arguments": {
+    "is_debug": false,
+    "enable_iterator_debugging": false,
+    "use_ozone": true,
+    "target_cpu": "arm",
+    "arm_arch": "armv7-a",
+    "target_os": "linux"
+  },
+  "depot_tools": {
+    "checkout": "depot_tools",
+    "repo": "https://chromium.googlesource.com/chromium/tools/depot_tools.git"
+  },
+  "webrtc": {
+    "checkout": "webrtc",
+    "ref": "branch-heads/60",
+    "repo": "https://chromium.googlesource.com/external/webrtc.git"
+  },
+  "out": ".",
+  "s3": {
+    "bucket": "dadong.webrtc-libraries-and-headers",
+    "remote_path": "v1/build"
+  }
+}
