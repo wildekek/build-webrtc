@@ -2,7 +2,8 @@
   "configuration": "Release",
   "build_arguments": {
     "is_debug": false,
-    "enable_iterator_debugging": false
+    "enable_iterator_debugging": false,
+    "use_ozone": true
   },
   "depot_tools": {
     "checkout": "depot_tools",
