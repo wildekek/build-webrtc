@@ -1,8 +1,12 @@
 {
+  "configuration": "Release",
   "build_arguments": {
     "is_debug": false,
     "enable_iterator_debugging": false,
-    "use_ozone": true
+    "use_ozone": true,
+    "rtc_include_pulse_audio": false,
+    "target_os": "linux",
+    "target_cpu": "x64"
   },
   "depot_tools": {
     "checkout": "depot_tools",

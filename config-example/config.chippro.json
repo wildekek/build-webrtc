@@ -1,12 +1,16 @@
 {
-  "configuration": "Release",
+  "configuration": "Debug",
   "build_arguments": {
-    "is_debug": false,
+    "is_debug": true,
     "enable_iterator_debugging": false,
     "use_ozone": true,
+    "target_os": "linux",
     "target_cpu": "arm",
     "arm_arch": "armv7-a",
-    "target_os": "linux"
+    "arm_float_abi": "hard",
+    "arm_fpu": "neon",
+    "arm_tune": "cortex-a8",
+    "arm_use_neon": true
   },
   "depot_tools": {
     "checkout": "depot_tools",
