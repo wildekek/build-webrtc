@@ -3,6 +3,7 @@
     "is_debug": true,
     "enable_iterator_debugging": false,
     "use_ozone": true,
+    "rtc_include_pulse_audio": false,
     "target_os": "linux",
     "target_cpu": "arm",
     "arm_arch": "armv7-a",
