@@ -1,5 +1,4 @@
 {
-  "configuration": "Release",
   "build_arguments": {
     "is_debug": false,
     "enable_iterator_debugging": false,

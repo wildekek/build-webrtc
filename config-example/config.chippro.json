@@ -1,5 +1,4 @@
 {
-  "configuration": "Debug",
   "build_arguments": {
     "is_debug": true,
     "enable_iterator_debugging": false,
